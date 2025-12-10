@@ -16,7 +16,7 @@
 - **Manajemen Supplier**: Melacak data pemasok dan kontak.
 - **Dukungan Barcode/SKU**: Pencarian produk yang efisien menggunakan SKU.
 
-### 📊 Dashboard & Analitik
+### 📊 Dashboard & Analytics
 - **Statistik Real-time**: Lihat penjualan harian, total transaksi, dan produk terlaris.
 - **Riwayat Penjualan**: Log transaksi mendetail dengan opsi penyaringan (filter).
 - **Laporan**: Hasilkan ringkasan untuk wawasan bisnis.
