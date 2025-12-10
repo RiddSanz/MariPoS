@@ -5,14 +5,10 @@ $username = 'root';
 $password = ''; 
 
 try {
-    // 1. Koneksi ke MySQL tanpa memilih database
     $pdo = new PDO("mysql:host=" . $host, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // 2. Buat database jika belum ada
     $pdo->exec("CREATE DATABASE IF NOT EXISTS `$db_name` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;");
-
-    // 3. Koneksi ke database yang spesifik
     $conn = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -20,7 +16,6 @@ try {
     die("Connection error: " . $exception->getMessage());
 }
 
-// Panggil setup untuk membuat tabel jika belum ada
 require_once 'setup.php';
 
 // --- Fungsi Helper ---
@@ -46,8 +41,6 @@ function check_login_api() {
 }
 
 function is_admin() {
-    // Ensure session is started (some API endpoints may call is_admin() before
-    // any session_start()). Normalize role to avoid case/whitespace mismatches.
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
