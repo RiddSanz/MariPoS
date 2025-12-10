@@ -135,7 +135,7 @@ try {
   $stmt = $conn->query("SELECT id FROM settings");
   if ($stmt->rowCount() == 0) {
     $conn->exec("INSERT INTO `settings` (`k`,`v`) VALUES
-      ('app_name','Parid Store'),
+      ('app_name','MariPoS'),
       ('address','Jl. Raya Kediri - Pare'),
       ('phone','0889-9160-8239'),
       ('logo_path','assets/img/logo.png')
